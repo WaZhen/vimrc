@@ -58,6 +58,14 @@ Plugin 'Valloric/YouCompleteMe'
 " Sync Clipboard
 set clipboard=unnamed
 
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
+" Enable folding with the spacebar
+nnoremap <space> za
+Plugin 'tmhedberg/SimpylFold'
+
+
 """"""""""""""""""""""""""""""""""" 
 "             Python              "
 """""""""""""""""""""""""""""""""""
@@ -98,3 +106,17 @@ Plugin 'crusoexia/vim-javascript-lib'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+" Add the virtualenv's site-packages to vim path
+if has('python')
+py << EOF
+import os.path
+import sys
+import vim
+if 'VIRTUAL_ENV' in os.environ:
+    project_base_dir = os.environ['VIRTUAL_ENV']
+    sys.path.insert(0, project_base_dir)
+    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+    execfile(activate_this, dict(__file__=activate_this))
+EOF
+endif
