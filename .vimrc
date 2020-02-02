@@ -3,13 +3,6 @@ set nocompatible              " required
 syntax on
 syntax enable
 
-" Monokai color scheme
-" mkdir -p ~/.vim/colors
-" wget https://raw.githubusercontent.com/crusoexia/vim-monokai/master/colors/monokai.vim ~/.vim/colors
-
-" Solarized color scheme
-" colorscheme solarized
-
 " utf-8/cp949 support
 set encoding=utf-8
 set fileencodings=utf-8,cp949
@@ -95,18 +88,6 @@ Plugin 'vim-scripts/indentpython.vim'
 " Python commenter
 Plugin 'scrooloose/nerdcommenter'
 
-""""""""""""""""""""""""""""""""""" 
-"           JavaScript            "
-"""""""""""""""""""""""""""""""""""
-" JavaScript Syntax, Highliting and Indentation
-Plugin 'pangloss/vim-javascript'
-Plugin 'crusoexia/vim-javascript-lib'
-
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-
 " Add the virtualenv's site-packages to vim path
 if has('python')
 py << EOF
@@ -120,3 +101,22 @@ if 'VIRTUAL_ENV' in os.environ:
     execfile(activate_this, dict(__file__=activate_this))
 EOF
 endif
+
+""""""""""""""""""""""""""""""""""" 
+"           JavaScript            "
+"""""""""""""""""""""""""""""""""""
+" JavaScript Syntax, Highliting and Indentation
+Plugin 'pangloss/vim-javascript'
+Plugin 'crusoexia/vim-javascript-lib'
+
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+""""""""""""""""""""""""""""""""""""
+"            HTML                  "
+""""""""""""""""""""""""""""""""""""
+"Emmet plugin
+Plugin 'mattn/emmet-vim'
+
