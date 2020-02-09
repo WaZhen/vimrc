@@ -13,6 +13,9 @@ set nu
 " Tab = 4 spaces
 set ts=4
 
+" Cursor Line
+set cursorline
+
 " Smart Indentation
 " set smartindent
 
