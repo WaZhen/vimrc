@@ -3,6 +3,10 @@ set nocompatible              " required
 syntax on
 syntax enable
 
+" list chars
+set listchars=eol:$,nbsp:_,tab:>-,trail:~,extends:>,precedes:<
+set list
+
 " utf-8/cp949 support
 set encoding=utf-8
 set fileencodings=utf-8,cp949
